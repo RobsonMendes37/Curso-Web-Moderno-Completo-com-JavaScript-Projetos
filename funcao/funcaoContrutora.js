@@ -2,7 +2,6 @@ function Carro (velocidadeMaxima=200, delta=5){
     //atributo privado
     let velocidadeAtual =0
 
-
     //metodo publico
     this.acelerar = () =>{
         if(velocidadeAtual + delta <= velocidadeMaxima){
@@ -11,7 +10,6 @@ function Carro (velocidadeMaxima=200, delta=5){
             velocidadeAtual = velocidadeMaxima
         }
     }
-
 
     //metodo publico
     this.getVelocidadeAtual = function(){
