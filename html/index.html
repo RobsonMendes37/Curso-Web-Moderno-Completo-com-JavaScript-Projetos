@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercicios HTML</h1>
+    </header>
+
+    <nav>
+        <a href wm-nav="exercicios/test.html"> 00 - Test</a> |
+        <a href wm-nav="exercicios/texto1.html"> 01 - Texto</a> |
+        <a href wm-nav="exercicios/listas.html"> 02 - Listas</a> |
+        <a href wm-nav="exercicios/links.html"> 03 - links</a> |
+        <a href wm-nav="exercicios/tabelas.html"> 04 - tabelas</a> |
+        <a href wm-nav="exercicios/form/form.html"> 05 - formulario</a>
+        <a href="exercicios/imagens.html"> 06 - imagens</a> | 
+        <a href="exercicios/video.html"> 07 - video</a> | 
+    </nav> <a href wm-nav="exercicios/tagsNaoVisuais.html"> 08 - tags não visuais</a>
+    <section id="conteudo"></section>
+    <footer>
+        Curso de Web
+    </footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = function(e) {    //associa a cada link uma função 
+                e.preventDefault()
+                fetch(link.getAttribute('wm-nav'))    //pega uma chamada ajax
+                    .then(resp =>resp.text()) //pega o valor textual do html
+                    .then(html => conteudo.innerHTML = html) //pega o html e joga dentro de conteudo
+            }
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+<!-- para rodar o servido na maquina :    http-server      -->
+<!-- pra não ter cache     http-server -c-1       -->
