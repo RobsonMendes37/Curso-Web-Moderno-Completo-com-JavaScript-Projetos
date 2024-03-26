@@ -4,13 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
-    <style>
-        /* ... */
-    </style>
+    
 </head>
-
-<body>
+<!-- o style dentro da tag tem a maior prioridade -->
+<body style="background-color: rgb(48, 228, 51);" >
     <h1>E agora?</h1>
 </body>
+
+<style>
+    body{
+        background-color: aquamarine;
+    }
+</style>
+<!-- o ultimo style a ser processado tem prioridade -->
+<style>
+    body{
+        background-color: orange;
+    }
+</style>
 
 </html>
